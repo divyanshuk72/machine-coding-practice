@@ -11,4 +11,8 @@ export const DataList = [
     name: "Traffic Light",
     route: "/traffic-light",
   },
+  {
+    name: "Accordion",
+    route: "/accordion",
+  },
 ];

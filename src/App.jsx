@@ -4,6 +4,7 @@ import TicketBookingSystem from "./components/TicketBookingSystem";
 import Dashboard from "./components/Dashboard";
 import "./App.css";
 import TrafficLight from "./components/TrafficLight";
+import Accordion from "./components/Accordion";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/traffic-light",
     element: <TrafficLight />,
+  },
+  {
+    path: "/accordion",
+    element: <Accordion />,
   },
 ]);
 

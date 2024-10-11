@@ -59,7 +59,7 @@ const Accordion = () => {
             gap: "40px",
           }}
         >
-          {AccordionList.map((item, index) => {
+          {AccordionList?.map((item, index) => {
             const isOpen = openAccordions.includes(index);
 
             return (

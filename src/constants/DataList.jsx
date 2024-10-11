@@ -15,4 +15,8 @@ export const DataList = [
     name: "Accordion",
     route: "/accordion",
   },
+  {
+    name: "Random Color",
+    route: "/random-color-generator",
+  },
 ];

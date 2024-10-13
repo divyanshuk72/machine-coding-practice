@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const RandomColorGenerator = () => {
   const [hexColorCode, setHexColorCode] = useState("#000000");
@@ -20,6 +21,8 @@ const RandomColorGenerator = () => {
     color = color + "(" + num1 + "," + num2 + "," + num3 + ")";
     setHexColorCode(color);
   };
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -88,6 +91,22 @@ const RandomColorGenerator = () => {
             Color Code - {hexColorCode}
           </span>
         </div>
+        <button
+          style={{
+            padding: "10px",
+            backgroundColor: "#cc4141",
+            border: "none",
+            borderRadius: "10px",
+            color: "white",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Back
+        </button>
       </div>
     </>
   );

@@ -19,4 +19,8 @@ export const DataList = [
     name: "Random Color",
     route: "/random-color-generator",
   },
+  {
+    name: "Filter",
+    route: "/filter",
+  },
 ];

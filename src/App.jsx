@@ -6,6 +6,7 @@ import "./App.css";
 import TrafficLight from "./components/TrafficLight";
 import Accordion from "./components/Accordion";
 import RandomColorGenerator from "./components/RandomColorGenerator";
+import Filter from "./components/Filter";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/random-color-generator",
     element: <RandomColorGenerator />,
+  },
+  {
+    path: "/filter",
+    element: <Filter />,
   },
 ]);
 

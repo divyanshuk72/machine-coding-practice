@@ -23,4 +23,8 @@ export const DataList = [
     name: "Filter",
     route: "/filter",
   },
+  {
+    name: "Ratings",
+    route: "/ratings",
+  },
 ];

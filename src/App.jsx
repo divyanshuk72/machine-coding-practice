@@ -7,6 +7,7 @@ import TrafficLight from "./components/TrafficLight";
 import Accordion from "./components/Accordion";
 import RandomColorGenerator from "./components/RandomColorGenerator";
 import Filter from "./components/Filter";
+import Ratings from "./components/Ratings";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/filter",
     element: <Filter />,
+  },
+  {
+    path: "/ratings",
+    element: <Ratings />,
   },
 ]);
 

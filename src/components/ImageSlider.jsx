@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Circle from "../assets/Circle.svg";
+import FilledCircle from "../assets/FilledCircle.svg";
 
 const ImageSlider = () => {
   const API_URL = "https://picsum.photos/v2/list?page=1&limit=10";
@@ -106,6 +108,15 @@ const ImageSlider = () => {
           >
             {">"}
           </button>
+        </div>
+        <div style={{ margin: "10px" }}>
+          {imagesData.map((_, index) => {
+            return currentImage && currentIndex === index ? (
+              <img key={index} src={FilledCircle} alt="circle" width={20} />
+            ) : (
+              <img key={index} src={Circle} alt="circle" width={20} />
+            );
+          })}
         </div>
         <button
           style={{

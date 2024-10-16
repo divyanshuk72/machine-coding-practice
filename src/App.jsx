@@ -8,6 +8,7 @@ import Accordion from "./components/Accordion";
 import RandomColorGenerator from "./components/RandomColorGenerator";
 import Filter from "./components/Filter";
 import Ratings from "./components/Ratings";
+import ImageSlider from "./components/ImageSlider";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/ratings",
     element: <Ratings />,
+  },
+  {
+    path: "/image-slider",
+    element: <ImageSlider />,
   },
 ]);
 

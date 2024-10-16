@@ -27,4 +27,8 @@ export const DataList = [
     name: "Ratings",
     route: "/ratings",
   },
+  {
+    name: "Image Slider",
+    route: "/image-slider",
+  },
 ];

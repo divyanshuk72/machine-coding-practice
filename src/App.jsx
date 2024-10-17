@@ -9,6 +9,7 @@ import RandomColorGenerator from "./components/RandomColorGenerator";
 import Filter from "./components/Filter";
 import Ratings from "./components/Ratings";
 import ImageSlider from "./components/ImageSlider";
+import LoadMoreProducts from "./components/LoadMoreProducts";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/image-slider",
     element: <ImageSlider />,
+  },
+  {
+    path: "/load-more-products",
+    element: <LoadMoreProducts />,
   },
 ]);
 

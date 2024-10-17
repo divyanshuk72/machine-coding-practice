@@ -31,4 +31,8 @@ export const DataList = [
     name: "Image Slider",
     route: "/image-slider",
   },
+  {
+    name: "Load more products",
+    route: "/load-more-products",
+  },
 ];

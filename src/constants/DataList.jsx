@@ -32,7 +32,7 @@ export const DataList = [
     route: "/image-slider",
   },
   {
-    name: "Load more products",
-    route: "/load-more-products",
+    name: "Products",
+    route: "/products",
   },
 ];

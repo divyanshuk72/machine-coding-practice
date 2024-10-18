@@ -49,7 +49,7 @@ const router = createBrowserRouter([
     element: <ImageSlider />,
   },
   {
-    path: "/load-more-products",
+    path: "/products",
     element: <LoadMoreProducts />,
   },
 ]);

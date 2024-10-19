@@ -35,4 +35,12 @@ export const DataList = [
     name: "Products",
     route: "/products",
   },
+  {
+    name: "Tree view",
+    route: "/tree-view",
+  },
+  {
+    name: "QR Code",
+    route: "/qr-code",
+  },
 ];

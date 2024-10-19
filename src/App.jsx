@@ -10,6 +10,8 @@ import Filter from "./components/Filter";
 import Ratings from "./components/Ratings";
 import ImageSlider from "./components/ImageSlider";
 import LoadMoreProducts from "./components/LoadMoreProducts";
+import TreeView from "./components/TreeView";
+import QRCode from "./components/QRCode";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
   {
     path: "/products",
     element: <LoadMoreProducts />,
+  },
+  {
+    path: "/tree-view",
+    element: <TreeView />,
+  },
+  {
+    path: "/qr-code",
+    element: <QRCode />,
   },
 ]);
 

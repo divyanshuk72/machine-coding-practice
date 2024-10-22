@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { responses } from "../constants/FilterData";
+import { responses } from "../../constants/FilterData";
 import { useNavigate } from "react-router-dom";
 
 const Filter = () => {

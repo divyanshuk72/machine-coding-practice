@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import FilledStar from "../assets/filledStar.svg";
+import FilledStar from "../../assets/filledStar.svg";
 import { useNavigate } from "react-router-dom";
 
 const LoadMoreProducts = () => {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { menus } from "../constants/TreeViewData";
+import { menus } from "../../constants/TreeViewData";
 import { useNavigate } from "react-router-dom";
 
 const MenuList = ({ list = [] }) => {

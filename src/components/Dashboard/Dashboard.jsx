@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-import { DataList } from "../constants/DataList";
+import { DataList } from "../../constants/DataList";
 
 const Dashboard = () => {
   const navigate = useNavigate();

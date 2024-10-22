@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AccordionList } from "../constants/AccordionList";
+import { AccordionList } from "../../constants/AccordionList";
 import { useNavigate } from "react-router-dom";
 
 const Accordion = () => {

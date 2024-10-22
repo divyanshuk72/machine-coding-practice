@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Circle from "../assets/Circle.svg";
-import FilledCircle from "../assets/FilledCircle.svg";
+import Circle from "../../assets/Circle.svg";
+import FilledCircle from "../../assets/FilledCircle.svg";
 
 const ImageSlider = () => {
   const API_URL = "https://picsum.photos/v2/list?page=1&limit=10";

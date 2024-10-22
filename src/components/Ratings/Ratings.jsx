@@ -1,5 +1,5 @@
-import Star from "../assets/star.svg";
-import FilledStar from "../assets/filledStar.svg";
+import Star from "../../assets/star.svg";
+import FilledStar from "../../assets/filledStar.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

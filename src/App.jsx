@@ -1,17 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PhotoAlbum from "./components/PhotoAlbum";
-import TicketBookingSystem from "./components/TicketBookingSystem";
-import Dashboard from "./components/Dashboard";
+import PhotoAlbum from "./components/PhotoAlbum/PhotoAlbum";
+import TicketBookingSystem from "./components/TicketBookingSystem/TicketBookingSystem";
+import Dashboard from "./components/Dashboard/Dashboard";
 import "./App.css";
-import TrafficLight from "./components/TrafficLight";
-import Accordion from "./components/Accordion";
-import RandomColorGenerator from "./components/RandomColorGenerator";
-import Filter from "./components/Filter";
-import Ratings from "./components/Ratings";
-import ImageSlider from "./components/ImageSlider";
-import LoadMoreProducts from "./components/LoadMoreProducts";
-import TreeView from "./components/TreeView";
-import QRCode from "./components/QRCode";
+import TrafficLight from "./components/TrafficLight/TrafficLight";
+import Accordion from "./components/Accordion/Accordion";
+import RandomColorGenerator from "./components/RandomColorGenerator/RandomColorGenerator";
+import Filter from "./components/Filter/Filter";
+import Ratings from "./components/Ratings/Ratings";
+import ImageSlider from "./components/ImageSlider/ImageSlider";
+import LoadMoreProducts from "./components/LoadMoreProducts/LoadMoreProducts";
+import TreeView from "./components/TreeView/TreeView";
+import QRCode from "./components/QRCode/QRCode";
 
 const router = createBrowserRouter([
   {

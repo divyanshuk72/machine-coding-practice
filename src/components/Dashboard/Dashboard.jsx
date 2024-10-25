@@ -14,7 +14,7 @@ const Dashboard = () => {
             return (
               <li
                 key={index}
-                className="list-none cursor-pointer text-white rounded-xl p-3 text-xl min-w-custom bg-customRed"
+                className="list-none cursor-pointer text-white rounded-xl p-3 text-xl min-w-[180px] bg-customRed"
                 onClick={() => {
                   navigate(data.route);
                 }}

@@ -23,16 +23,9 @@ const Ratings = ({ numberOfStars = 5 }) => {
 
   return (
     <>
-      <div style={{ textAlign: "center" }}>
-        <h1 style={{ color: "white", margin: "50px" }}>Ratings</h1>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "5px",
-          }}
-        >
+      <div className="text-center">
+        <h1 className="text-white my-12 text-4xl">Ratings</h1>
+        <div className="flex justify-center items-center gap-2">
           {[...Array(numberOfStars)].map((_, index) => {
             index += 1;
             return (
@@ -41,29 +34,19 @@ const Ratings = ({ numberOfStars = 5 }) => {
                   <img
                     src={Star}
                     alt="star"
-                    onMouseEnter={() => {
-                      handleMouseEnter(index);
-                    }}
-                    onMouseLeave={() => {
-                      handleMouseLeave(index);
-                    }}
-                    onClick={() => {
-                      handleMouseClick(index);
-                    }}
+                    className="cursor-pointer"
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={() => handleMouseLeave(index)}
+                    onClick={() => handleMouseClick(index)}
                   />
                 ) : (
                   <img
                     src={FilledStar}
                     alt="Filled star"
-                    onMouseEnter={() => {
-                      handleMouseEnter(index);
-                    }}
-                    onMouseLeave={() => {
-                      handleMouseLeave(index);
-                    }}
-                    onClick={() => {
-                      handleMouseClick(index);
-                    }}
+                    className="cursor-pointer"
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={() => handleMouseLeave(index)}
+                    onClick={() => handleMouseClick(index)}
                   />
                 )}
               </div>
@@ -71,24 +54,11 @@ const Ratings = ({ numberOfStars = 5 }) => {
           })}
         </div>
         {rating && (
-          <h3 style={{ color: "white", margin: "50px" }}>
-            You have rated {rating} stars
-          </h3>
+          <h3 className="text-white my-12">You have rated {rating} stars</h3>
         )}
         <button
-          style={{
-            padding: "10px",
-            margin: "30px",
-            backgroundColor: "#cc4141",
-            border: "none",
-            borderRadius: "10px",
-            color: "white",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            navigate("/");
-          }}
+          className="px-4 py-2 mt-8 bg-customRed rounded-lg text-white text-base cursor-pointer"
+          onClick={() => navigate("/")}
         >
           Back
         </button>

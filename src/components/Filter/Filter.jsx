@@ -32,125 +32,77 @@ const Filter = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.header}>Filter</h1>
-      <div style={styles.filterContainer}>
-        <label style={styles.label}>
+    <div className="p-5 text-center font-sans">
+      <h1 className="text-4xl text-white">Filter</h1>
+      <div className="my-5 flex justify-center gap-10 text-white">
+        <label className="flex items-center gap-2">
           <input
             type="checkbox"
             name="generated"
             checked={filters.generated}
             onChange={handleCheckboxChange}
+            className="cursor-pointer"
           />
           Generated
         </label>
-        <label style={styles.label}>
+        <label className="flex items-center gap-2">
           <input
             type="checkbox"
             name="augmented"
             checked={filters.augmented}
             onChange={handleCheckboxChange}
+            className="cursor-pointer"
           />
           Augmented
         </label>
-        <label style={styles.label}>
+        <label className="flex items-center gap-2">
           <input
             type="checkbox"
             name="verified"
             checked={filters.verified}
             onChange={handleCheckboxChange}
+            className="cursor-pointer"
           />
           Verified
         </label>
-        <label style={styles.label}>
+        <label className="flex items-center gap-2">
           <input
             type="checkbox"
             name="notVerified"
             checked={filters.notVerified}
             onChange={handleCheckboxChange}
+            className="cursor-pointer"
           />
           Not Verified
         </label>
       </div>
 
-      <div style={styles.cardContainer}>
+      <div className="flex flex-wrap justify-center gap-5">
         {filteredResponses.length > 0 ? (
           filteredResponses.map((response) => (
-            <div key={response._id} style={styles.card}>
-              <h2 style={styles.question}>{response.question}</h2>
-              <h2 style={styles.question}>{response.source}</h2>
-              <h2 style={styles.question}>
+            <div
+              key={response._id}
+              className="bg-customRed rounded-md p-5 w-72 text-white text-center"
+            >
+              <h2 className="text-lg mb-2">{response.question}</h2>
+              <h2 className="text-lg mb-2">{response.source}</h2>
+              <h2 className="text-lg mb-2">
                 {response.is_verified ? "True" : "False"}
               </h2>
             </div>
           ))
         ) : (
-          <p style={{ color: "white" }}>
-            No results match your filter criteria.
-          </p>
+          <p className="text-white">No results match your filter criteria.</p>
         )}
       </div>
       <button
-        style={{
-          padding: "10px",
-          margin: "30px",
-          backgroundColor: "#cc4141",
-          border: "none",
-          borderRadius: "10px",
-          color: "white",
-          fontSize: "16px",
-          cursor: "pointer",
-        }}
-        onClick={() => {
-          navigate("/");
-        }}
+        className="px-4 py-2 mt-10 bg-customRed rounded-lg text-white text-base cursor-pointer"
+        onClick={() => navigate("/")}
       >
         Back
       </button>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    padding: "20px",
-    fontFamily: "Arial, sans-serif",
-    textAlign: "center",
-  },
-  header: {
-    fontSize: "2em",
-    color: "white",
-  },
-  filterContainer: {
-    margin: "20px",
-    display: "flex",
-    justifyContent: "center",
-    gap: "30px",
-    color: "white",
-  },
-  label: {
-    display: "flex",
-    gap: "10px",
-  },
-  cardContainer: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    gap: "20px",
-  },
-  card: {
-    backgroundColor: "#cc4141",
-    borderRadius: "8px",
-    padding: "20px",
-    width: "300px",
-    textAlign: "center",
-  },
-  question: {
-    fontSize: "1.2em",
-    margin: "0 0 10px 0",
-    color: "white",
-    backgroundColor: "#cc4141",
-  },
 };
 
 export default Filter;

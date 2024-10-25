@@ -18,7 +18,6 @@ const PhotoAlbum = () => {
     setOpen(true);
   };
 
-  // Function to filter album items based on albumId
   const getThumbnailsByAlbum = (albumId) => {
     return result.filter((album) => album.albumId === albumId);
   };
@@ -43,24 +42,14 @@ const PhotoAlbum = () => {
   }, []);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="text-center text-white">Error: {error}</div>;
   }
+
   return (
     <>
-      <h1 style={{ color: "white", textAlign: "center", margin: "32px" }}>
-        Albums
-      </h1>
-      {/* Display album titles */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexWrap: "wrap",
-          alignItems: "center",
-          gap: "10px",
-          margin: "40px",
-        }}
-      >
+      <h1 className="text-white text-center my-8 text-4xl">Albums</h1>
+
+      <div className="flex justify-evenly flex-wrap items-center gap-3 mx-10 my-10">
         {Object.keys(
           result.reduce(function (acc, curr) {
             if (acc[curr.albumId]) {
@@ -71,21 +60,11 @@ const PhotoAlbum = () => {
             return acc;
           }, {})
         )
-          .slice(0, 16)
+          .slice(0, 14)
           .map((albumId) => (
             <div key={albumId}>
               <button
-                style={{
-                  padding: "10px",
-                  backgroundColor: "#cc4141",
-                  border: "none",
-                  borderRadius: "10px",
-                  margin: "5px",
-                  color: "white",
-                  fontSize: "18px",
-                  cursor: "pointer",
-                  minWidth: "140px",
-                }}
+                className="px-4 py-2 bg-customRed border-none rounded-lg my-1 text-white text-lg cursor-pointer min-w-[140px]"
                 onClick={() => setSelectedAlbumId(parseInt(albumId))}
               >
                 Album {albumId}
@@ -94,21 +73,12 @@ const PhotoAlbum = () => {
           ))}
       </div>
 
-      {/* Display thumbnails for the selected album */}
       {selectedAlbumId && (
-        <div style={{ margin: "40px" }}>
-          <h2 style={{ color: "white", margin: "20px" }}>
+        <div className="my-10">
+          <h2 className="text-white my-5 text-2xl text-center">
             Thumbnails for Album {selectedAlbumId}
           </h2>
-          <div
-            style={{
-              display: "flex",
-              gap: "10px",
-              flexWrap: "wrap",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-            }}
-          >
+          <div className="flex gap-3 flex-wrap justify-evenly items-center">
             {getThumbnailsByAlbum(selectedAlbumId).map((album) => (
               <div key={album.id}>
                 <img
@@ -118,10 +88,9 @@ const PhotoAlbum = () => {
                     setSelectedImage(album.url);
                     handleOpen();
                   }}
+                  className="cursor-pointer"
                 />
-                <p style={{ paddingLeft: "65px", color: "white" }}>
-                  {album.id}
-                </p>
+                <p className="pl-16 text-white">{album.id}</p>
               </div>
             ))}
           </div>
@@ -131,47 +100,17 @@ const PhotoAlbum = () => {
       {open && (
         <div
           onClick={handleClose}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            background: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
         >
-          <div
-            style={{
-              background: "white",
-              height: "auto",
-              width: "660px",
-              margin: "auto",
-              padding: "2%",
-              border: "2px solid #000",
-              borderRadius: "10px",
-              boxShadow: "2px solid black",
-            }}
-          >
-            <img src={selectedImage} alt="image" />
+          <div className="bg-white p-5 border-2 border-black rounded-lg shadow-lg w-[660px]">
+            <img src={selectedImage} alt="Selected" />
           </div>
         </div>
       )}
-      <div style={{ textAlign: "center" }}>
+
+      <div className="text-center my-5">
         <button
-          style={{
-            padding: "10px",
-            backgroundColor: "#cc4141",
-            border: "none",
-            borderRadius: "10px",
-            margin: "10px",
-            color: "white",
-            fontSize: "18px",
-            cursor: "pointer",
-            minWidth: "140px",
-          }}
+          className="px-4 py-2 bg-customRed border-none rounded-lg text-white text-lg cursor-pointer min-w-[140px]"
           onClick={() => navigate("/")}
         >
           Back

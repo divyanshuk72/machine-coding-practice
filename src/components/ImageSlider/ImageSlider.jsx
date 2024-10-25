@@ -46,92 +46,55 @@ const ImageSlider = () => {
   const navigate = useNavigate();
 
   if (error !== null) {
-    return <div>Error Occured - {error}</div>;
+    return <div>Error Occurred - {error}</div>;
   }
 
   return (
     <>
-      <div style={{ textAlign: "center" }}>
-        <h1 style={{ color: "white", margin: "50px" }}>Image Slider</h1>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "20px",
-          }}
-        >
+      <div className="text-center flex flex-col justify-center items-center gap-4">
+        <h1 className="text-white my-12 text-4xl">Image Slider</h1>
+        <div className="flex justify-center items-center gap-5">
           <button
-            style={{
-              padding: "10px",
-              color: "white",
-              backgroundColor: "#cc4141",
-              border: "none",
-              borderRadius: "10px",
-              fontSize: "20px",
-              cursor: currentIndex === 0 ? "not-allowed" : "pointer",
-            }}
+            className={`px-4 py-2 text-white bg-customRed rounded-lg text-lg cursor-${
+              currentIndex === 0 ? "not-allowed" : "pointer"
+            }`}
             onClick={handleBackButton}
+            disabled={currentIndex === 0}
           >
             {"<"}
           </button>
-          <div
-            style={{
-              width: "500px",
-              height: "auto",
-              border: "1px solid white",
-              borderRadius: "10px",
-              objectFit: "cover",
-              overflow: "hidden",
-            }}
-          >
+          <div className="border border-white rounded-lg overflow-hidden w-500 h-auto">
             {imagesData.length > 0 ? (
               <img src={currentImage} alt="image" width={500} />
             ) : (
-              <h3 style={{ color: "white" }}>Loading...</h3>
+              <h3 className="text-white">Loading...</h3>
             )}
           </div>
           <button
-            style={{
-              padding: "10px",
-              color: "white",
-              backgroundColor: "#cc4141",
-              border: "none",
-              borderRadius: "10px",
-              fontSize: "20px",
-              cursor:
-                currentIndex === imagesData.length - 1
-                  ? "not-allowed"
-                  : "pointer",
-            }}
+            className={`px-4 py-2 text-white bg-customRed rounded-lg text-lg cursor-${
+              currentIndex === imagesData.length - 1 ? "not-allowed" : "pointer"
+            }`}
             onClick={handleNextButton}
+            disabled={currentIndex === imagesData.length - 1}
           >
             {">"}
           </button>
         </div>
-        <div style={{ margin: "10px" }}>
-          {imagesData.map((_, index) => {
-            return currentImage && currentIndex === index ? (
-              <img key={index} src={FilledCircle} alt="circle" width={20} />
-            ) : (
-              <img key={index} src={Circle} alt="circle" width={20} />
-            );
-          })}
+        <div className="my-2 flex gap-1">
+          {imagesData.map((_, index) => (
+            <img
+              key={index}
+              src={
+                currentImage && currentIndex === index ? FilledCircle : Circle
+              }
+              alt="circle"
+              width={20}
+            />
+          ))}
         </div>
         <button
-          style={{
-            padding: "10px",
-            margin: "30px",
-            backgroundColor: "#cc4141",
-            border: "none",
-            borderRadius: "10px",
-            color: "white",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            navigate("/");
-          }}
+          className="px-4 py-2 mt-8 bg-customRed rounded-lg text-white text-base cursor-pointer"
+          onClick={() => navigate("/")}
         >
           Back
         </button>

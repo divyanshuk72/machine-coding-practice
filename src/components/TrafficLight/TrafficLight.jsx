@@ -40,106 +40,38 @@ const TrafficLight = () => {
   const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        textAlign: "center",
-        margin: "32px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <h1 style={{ color: "white", margin: "40px" }}>Traffic Light</h1>
-      <h5 style={{ color: "white", marginBottom: "20px", fontStyle: "italic" }}>
-        (Default delay - 5s each)
-      </h5>
+    <div className="flex flex-col items-center justify-center text-center my-8 gap-5">
+      <h1 className="text-white text-3xl my-8">Traffic Light</h1>
+      <h5 className="text-white mb-5 italic">(Default delay - 5s each)</h5>
 
-      <div
-        style={{
-          maxWidth: "75px",
-          height: "auto",
-          border: "1px solid white",
-          borderRadius: "10px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          padding: "10px",
-          gap: "10px",
-        }}
-      >
+      <div className="max-w-[75px] border border-white rounded-lg flex flex-col justify-around p-2 gap-2">
         <div
-          style={{
-            width: "50px",
-            height: "50px",
-            border: "1px solid white",
-            borderRadius: "50%",
-            backgroundColor: "red",
-            opacity: `${activeLight === "red" ? 1 : 0.2}`,
-          }}
+          className={`w-[50px] h-[50px] border border-white rounded-full bg-red-500 transition-opacity duration-300 ${
+            activeLight === "red" ? "opacity-100" : "opacity-20"
+          }`}
         ></div>
         <div
-          style={{
-            width: "50px",
-            height: "50px",
-            border: "1px solid white",
-            borderRadius: "50%",
-            backgroundColor: "yellow",
-            opacity: `${activeLight === "yellow" ? 1 : 0.2}`,
-          }}
+          className={`w-[50px] h-[50px] border border-white rounded-full bg-yellow-400 transition-opacity duration-300 ${
+            activeLight === "yellow" ? "opacity-100" : "opacity-20"
+          }`}
         ></div>
         <div
-          style={{
-            width: "50px",
-            height: "50px",
-            border: "1px solid white",
-            borderRadius: "50%",
-            backgroundColor: "green",
-            opacity: `${activeLight === "green" ? 1 : 0.2}`,
-          }}
+          className={`w-[50px] h-[50px] border border-white rounded-full bg-green-500 transition-opacity duration-300 ${
+            activeLight === "green" ? "opacity-100" : "opacity-20"
+          }`}
         ></div>
       </div>
-      <div
-        style={{
-          color: "white",
-          margin: "20px",
-          width: "130px",
-          height: "auto",
-          padding: "10px",
-          border: "1px solid white",
-          borderRadius: "10px",
-        }}
-      >
+      <div className="text-white mt-5 w-[130px] border border-white rounded-lg p-2">
         <div>Time Passed</div>
         <div>{timePassed}</div>
       </div>
 
-      <div
-        style={{
-          margin: "20px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "20px",
-        }}
-      >
-        <p
-          style={{
-            color: "white",
-            fontSize: "18px",
-          }}
-        >
-          Change starting light
-        </p>
+      <div className="flex justify-center items-center gap-5 mt-5">
+        <p className="text-white text-lg">Change starting light</p>
         <select
           name="startLight"
           id="startLight"
-          style={{
-            padding: "10px",
-            borderRadius: "10px",
-            backgroundColor: "white",
-            cursor: "pointer",
-          }}
+          className="px-4 py-2 rounded-lg bg-white cursor-pointer"
           onChange={(e) => {
             setActiveLight(e.target.value);
             setTimePassed(0);
@@ -151,16 +83,7 @@ const TrafficLight = () => {
         </select>
       </div>
       <button
-        style={{
-          padding: "10px",
-          backgroundColor: "#cc4141",
-          border: "none",
-          borderRadius: "10px",
-          margin: "20px",
-          color: "white",
-          fontSize: "18px",
-          cursor: "pointer",
-        }}
+        className="px-4 py-2 bg-customRed rounded-lg mt-5 text-white text-lg cursor-pointer"
         onClick={() => {
           navigate("/");
         }}

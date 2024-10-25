@@ -21,28 +21,10 @@ const Accordion = () => {
 
   return (
     <>
-      <div
-        style={{
-          textAlign: "center",
-          margin: "80px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-around",
-          alignItems: "center",
-          gap: "50px",
-        }}
-      >
-        <h1 style={{ color: "white" }}>Accordion</h1>
+      <div className="text-center my-20 flex flex-col items-center gap-12">
+        <h1 className="text-white text-3xl">Accordion</h1>
         <button
-          style={{
-            padding: "10px",
-            backgroundColor: "#cc4141",
-            border: "none",
-            borderRadius: "10px",
-            color: "white",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
+          className="px-4 py-2 bg-customRed rounded-lg text-white text-base cursor-pointer"
           onClick={() => setIsMultiple(!isMultiple)}
         >
           {isMultiple
@@ -50,61 +32,29 @@ const Accordion = () => {
             : "Enable Multiple Selection"}
         </button>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-            alignItems: "center",
-            gap: "40px",
-          }}
-        >
+        <div className="flex flex-col items-center gap-10">
           {AccordionList?.map((item, index) => {
             const isOpen = openAccordions.includes(index);
 
             return (
-              <div key={index}>
+              <div key={index} className="w-full max-w-[50vw]">
                 <div
-                  style={{
-                    minWidth: "50vw",
-                    height: "auto",
-                    color: "white",
-                    backgroundColor: "#cc4141",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    padding: "20px",
-                    borderRadius: isOpen ? "10px 10px 0 0" : "10px",
-                    transition: "all 0.2s ease-out",
-                  }}
+                  className={`text-white bg-customRed flex justify-between px-5 py-4 rounded-t-lg transition-all duration-200 ease-out ${
+                    isOpen ? "rounded-t-lg" : "rounded-lg"
+                  }`}
                 >
+                  <span className="text-lg">{item.title}</span>
                   <span
-                    style={{ backgroundColor: "#cc4141", fontSize: "20px" }}
-                  >
-                    {item.title}
-                  </span>
-                  <span
-                    style={{
-                      backgroundColor: "#cc4141",
-                      cursor: "pointer",
-                      fontSize: "20px",
-                    }}
+                    className="cursor-pointer text-lg"
                     onClick={() => handleAccordionClick(index)}
                   >
                     {isOpen ? "-" : "+"}
                   </span>
                 </div>
                 <div
-                  style={{
-                    width: "50vw",
-                    height: isOpen ? "auto" : "0",
-                    color: "white",
-                    backgroundColor: "#cc4141",
-                    padding: isOpen ? "20px" : "0 20px",
-                    borderRadius: isOpen ? "0 0 10px 10px" : "10px",
-                    whiteSpace: "wrap",
-                    overflow: "hidden",
-                    transition: "all 0.2s ease-out",
-                  }}
+                  className={`text-white bg-customRed overflow-hidden transition-all duration-200 ease-out ${
+                    isOpen ? "px-5 py-4 rounded-b-lg" : "h-0 px-5 py-0"
+                  }`}
                 >
                   {item.description}
                 </div>
@@ -114,19 +64,8 @@ const Accordion = () => {
         </div>
 
         <button
-          style={{
-            padding: "10px",
-            backgroundColor: "#cc4141",
-            border: "none",
-            borderRadius: "10px",
-            margin: "20px",
-            color: "white",
-            fontSize: "18px",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            navigate("/");
-          }}
+          className="px-4 py-2 bg-customRed rounded-lg text-white text-lg cursor-pointer mt-5"
+          onClick={() => navigate("/")}
         >
           Back
         </button>

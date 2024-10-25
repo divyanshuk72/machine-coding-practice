@@ -6,9 +6,6 @@ export default {
       colors: {
         customRed: "#cc4141",
       },
-      minWidth: {
-        custom: "180px",
-      },
     },
   },
   plugins: [],

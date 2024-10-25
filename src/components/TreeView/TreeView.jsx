@@ -4,19 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const MenuList = ({ list = [] }) => {
   return (
-    <ul
-      style={{
-        listStyle: "none",
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        justifyContent: "center",
-        backgroundColor: "#cc4141",
-        borderRadius: "20px",
-        padding: "30px",
-      }}
-    >
+    <ul className="list-none text-white flex flex-col gap-5 justify-center bg-customRed rounded-2xl p-8 m-[30px]">
       {list && list.length
         ? list.map((item, index) => {
             return <MenuItem key={index} item={item} />;
@@ -37,18 +25,11 @@ const MenuItem = ({ item }) => {
   };
 
   return (
-    <li
-      style={{
-        fontSize: "24px",
-        backgroundColor: "#cc4141",
-        display: "flex",
-        gap: "10px",
-      }}
-    >
-      <span style={{ backgroundColor: "#cc4141" }}>{item.label}</span>
+    <li className="text-2xl bg-customRed flex gap-2">
+      <span className="bg-customRed">{item.label}</span>
       {item.children && (
         <span
-          style={{ cursor: "pointer", backgroundColor: "#cc4141" }}
+          className="cursor-pointer bg-customRed"
           onClick={() => {
             handleToggleChildren(item.label);
           }}
@@ -64,33 +45,16 @@ const MenuItem = ({ item }) => {
 const TreeView = () => {
   const navigate = useNavigate();
   return (
-    <>
-      <div
-        style={{
-          textAlign: "center",
-          margin: "50px",
-        }}
+    <div className="text-center my-12">
+      <h1 className="text-white my-8 text-4xl">Tree View</h1>
+      <MenuList list={menus} />
+      <button
+        className="px-4 py-2 bg-customRed rounded-lg my-5 text-white text-lg cursor-pointer min-w-[140px]"
+        onClick={() => navigate("/")}
       >
-        <h1 style={{ color: "white", margin: "30px" }}>Tree View</h1>
-        <MenuList list={menus} />
-        <button
-          style={{
-            padding: "10px",
-            backgroundColor: "#cc4141",
-            border: "none",
-            borderRadius: "10px",
-            margin: "20px",
-            color: "white",
-            fontSize: "18px",
-            cursor: "pointer",
-            minWidth: "140px",
-          }}
-          onClick={() => navigate("/")}
-        >
-          Back
-        </button>
-      </div>
-    </>
+        Back
+      </button>
+    </div>
   );
 };
 

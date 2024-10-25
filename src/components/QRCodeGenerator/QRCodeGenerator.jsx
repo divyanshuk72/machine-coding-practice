@@ -16,97 +16,42 @@ const QRCodeGenerator = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <div
-        style={{
-          textAlign: "center",
-          margin: "50px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "30px",
-        }}
-      >
-        <h1 style={{ color: "white", margin: "30px" }}>QR Code Generator</h1>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "10px",
+    <div className="text-center my-12 flex flex-col justify-center items-center gap-8">
+      <h1 className="text-white my-8 text-4xl">QR Code Generator</h1>
+      <div className="flex flex-col justify-center items-center gap-2">
+        <input
+          className="p-2 bg-white border-none rounded-lg min-w-[250px]"
+          type="text"
+          name="qr-code"
+          placeholder="Enter your value..."
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value);
           }}
-        >
-          <input
-            style={{
-              padding: "10px",
-              backgroundColor: "white",
-              border: "none",
-              borderRadius: "10px",
-              minWidth: "250px",
-            }}
-            type="text"
-            name="qr-code"
-            placeholder="Enter your value..."
-            value={value}
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
-          />
-          <button
-            style={{
-              padding: "10px",
-              backgroundColor: "#cc4141",
-              border: "none",
-              borderRadius: "10px",
-              margin: "20px",
-              color: "white",
-              fontSize: "18px",
-              cursor: "pointer",
-            }}
-            onClick={generateQrCode}
-          >
-            Generate
-          </button>
-        </div>
-
-        {show && (
-          <div
-            style={{
-              width: "300px",
-              height: "300px",
-              border: "1px solid white",
-              borderRadius: "10px",
-              backgroundColor: "white",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <QRCode id="qr-code-value" value={qrCode} />
-          </div>
-        )}
-
+        />
         <button
-          style={{
-            padding: "10px",
-            backgroundColor: "#cc4141",
-            border: "none",
-            borderRadius: "10px",
-            margin: "20px",
-            color: "white",
-            fontSize: "18px",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            navigate("/");
-          }}
+          className="p-2 bg-customRed border-none rounded-lg text-white text-lg cursor-pointer my-5"
+          onClick={generateQrCode}
         >
-          Back
+          Generate
         </button>
       </div>
-    </>
+
+      {show && (
+        <div className="w-72 h-72 border border-white rounded-lg bg-white flex justify-center items-center">
+          <QRCode id="qr-code-value" value={qrCode} />
+        </div>
+      )}
+
+      <button
+        className="p-2 bg-customRed border-none rounded-lg text-white text-lg cursor-pointer my-5"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Back
+      </button>
+    </div>
   );
 };
 

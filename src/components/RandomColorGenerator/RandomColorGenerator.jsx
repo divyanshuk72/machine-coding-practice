@@ -25,90 +25,42 @@ const RandomColorGenerator = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <div
-        style={{
-          textAlign: "center",
-          margin: "80px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "40px",
-        }}
-      >
-        <h1 style={{ color: "white" }}>Random Color Generator</h1>
-        <div style={{ display: "flex", gap: "20px" }}>
-          <button
-            style={{
-              padding: "10px",
-              backgroundColor: "#cc4141",
-              border: "none",
-              borderRadius: "10px",
-              color: "white",
-              fontSize: "16px",
-              cursor: "pointer",
-            }}
-            onClick={handleHexColorGeneration}
-          >
-            Generate Hex Color
-          </button>
-          <button
-            style={{
-              padding: "10px",
-              backgroundColor: "#cc4141",
-              border: "none",
-              borderRadius: "10px",
-              color: "white",
-              fontSize: "16px",
-              cursor: "pointer",
-            }}
-            onClick={handleRgbColorGeneration}
-          >
-            Generate RGB Color
-          </button>
-        </div>
-
-        <div
-          style={{
-            width: "50vw",
-            height: "50vh",
-            backgroundColor: hexColorCode,
-            border: "1px solid white",
-            borderRadius: "10px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <span
-            style={{
-              color: "white",
-              fontSize: "32px",
-              backgroundColor: hexColorCode,
-            }}
-          >
-            Color Code - {hexColorCode}
-          </span>
-        </div>
+    <div className="text-center my-20 flex flex-col items-center gap-10">
+      <h1 className="text-white text-3xl">Random Color Generator</h1>
+      <div className="flex gap-5">
         <button
-          style={{
-            padding: "10px",
-            backgroundColor: "#cc4141",
-            border: "none",
-            borderRadius: "10px",
-            color: "white",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
-          onClick={() => {
-            navigate("/");
-          }}
+          className="px-4 py-2 bg-customRed rounded-lg text-white text-base cursor-pointer"
+          onClick={handleHexColorGeneration}
         >
-          Back
+          Generate Hex Color
+        </button>
+        <button
+          className="px-4 py-2 bg-customRed rounded-lg text-white text-base cursor-pointer"
+          onClick={handleRgbColorGeneration}
+        >
+          Generate RGB Color
         </button>
       </div>
-    </>
+
+      <div
+        className="w-[50vw] h-[50vh] rounded-lg flex justify-center items-center border border-white"
+        style={{ backgroundColor: hexColorCode }}
+      >
+        <span
+          className="text-white text-2xl"
+          style={{ backgroundColor: hexColorCode }}
+        >
+          Color Code - {hexColorCode}
+        </span>
+      </div>
+
+      <button
+        className="px-4 py-2 bg-customRed rounded-lg text-white text-base cursor-pointer"
+        onClick={() => navigate("/")}
+      >
+        Back
+      </button>
+    </div>
   );
 };
 

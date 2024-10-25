@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import FilledStar from "../../assets/filledStar.svg";
 import { useNavigate } from "react-router-dom";
 
 const LoadMoreProducts = () => {
@@ -39,66 +38,30 @@ const LoadMoreProducts = () => {
 
   if (loading)
     return (
-      <div style={{ textAlign: "center", color: "white", margin: "20px" }}>
-        Loading data....
-      </div>
+      <div className="text-center text-white m-[20px]">Loading data....</div>
     );
 
   return (
     <>
-      <div style={{ textAlign: "center" }}>
-        <h1 style={{ color: "white", margin: "30px" }}>Products</h1>
-        <div
-          style={{
-            margin: "20px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "30px",
-            flexWrap: "wrap",
-          }}
-        >
+      <div className="text-center">
+        <h1 className="text-white m-[30px] text-4xl">Products</h1>
+        <div className="m-[20px] flex justify-center items-center gap-[30px] flex-wrap">
           {products && products.length
             ? products.map((item, index) => {
                 return (
                   <>
                     <div
                       key={index}
-                      style={{
-                        color: "white",
-                        borderRadius: "10px",
-                        width: "250px",
-                        height: "350px",
-                        backgroundColor: "#cc4141",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "space-evenly",
-                        alignItems: "center",
-                        gap: "20px",
-                        padding: "20px",
-                      }}
+                      className="text-white rounded-md w-[250px] h-[350px] bg-customRed flex flex-col justify-evenly items-center gap-[10px] p-[20px]"
                     >
                       <img
                         src={item.thumbnail}
                         alt={item.title}
                         width={150}
-                        style={{ borderRadius: "10px" }}
+                        className="rounded-md"
                       />
-                      <span style={{ backgroundColor: "#cc4141" }}>
-                        {item.title}
-                      </span>
-                      <span style={{ backgroundColor: "#cc4141" }}>
-                        ${item.price}
-                      </span>
-                      <span style={{ backgroundColor: "#cc4141" }}>
-                        {item.rating}{" "}
-                        <img
-                          style={{ backgroundColor: "#cc4141" }}
-                          src={FilledStar}
-                          alt="star"
-                          width={15}
-                        />
-                      </span>
+                      <span className="bg-customRed">{item.title}</span>
+                      <span className="bg-customRed">${item.price}</span>
                     </div>
                   </>
                 );
@@ -107,23 +70,12 @@ const LoadMoreProducts = () => {
         </div>
 
         {isDisable ? (
-          <div style={{ margin: "30px" }}>
-            <span style={{ color: "white" }}>
-              You have reached 100 products !!
-            </span>
+          <div className="m-[30px]">
+            <span className="text-white">You have reached 100 products !!</span>
           </div>
         ) : (
           <button
-            style={{
-              padding: "10px",
-              margin: "30px",
-              backgroundColor: "#cc4141",
-              border: "none",
-              borderRadius: "10px",
-              color: "white",
-              fontSize: "16px",
-              cursor: "pointer",
-            }}
+            className="p-[10px] m-[30px] bg-customRed border-none rounded-md text-white text-[16px] cursor-pointer"
             onClick={() => {
               setCount(count + 1);
             }}
@@ -133,16 +85,7 @@ const LoadMoreProducts = () => {
           </button>
         )}
         <button
-          style={{
-            padding: "10px",
-            margin: "30px",
-            backgroundColor: "#cc4141",
-            border: "none",
-            borderRadius: "10px",
-            color: "white",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
+          className="p-[10px] m-[30px] bg-customRed border-none rounded-md text-white text-[16px] cursor-pointer"
           onClick={() => {
             navigate("/");
           }}

@@ -41,167 +41,102 @@ const TicketBookingSystem = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ textAlign: "center", margin: "32px" }}>
-      <h1 style={{ color: "white", margin: "40px" }}>Ticket Booking System</h1>
-      <h3 style={{ color: "white", margin: "36px" }}>Select your seats</h3>
-      <h4 style={{ color: "white", margin: "18px" }}>VIP Section - </h4>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {vipSeats.map((row, index1) => {
-          return (
-            <div style={{ display: "flex", gap: "10px" }} key={index1}>
-              {row.map((seat, index2) => {
-                return (
-                  <p
-                    style={{
-                      padding: "5px",
-                      border: "1px solid #ccc",
-                      borderRadius: "5px",
-                      textAlign: "center",
-                      minWidth: "40px",
-                      cursor: selectedSeats.includes(seat)
-                        ? "not-allowed"
-                        : "pointer",
-                      backgroundColor: selectedSeats.includes(seat)
-                        ? "darkseagreen"
-                        : "white",
-                    }}
-                    key={`${index1}-${index2}`}
-                    onClick={() => {
-                      setSelectedSeats((prevSeats) => {
-                        if (prevSeats.length < 5) {
-                          return [...prevSeats, seat];
-                        } else {
-                          alert("Max limit reached");
-                          return prevSeats;
-                        }
-                      });
-                    }}
-                  >
-                    {seat}
-                  </p>
-                );
-              })}
-            </div>
-          );
-        })}
+    <div className="text-center my-8">
+      <h1 className="text-white my-10 text-3xl">Ticket Booking System</h1>
+      <h3 className="text-white my-9 text-xl">Select your seats</h3>
+
+      <h4 className="text-white my-4 text-lg">VIP Section</h4>
+      <div className="flex flex-col gap-3 items-center">
+        {vipSeats.map((row, index1) => (
+          <div className="flex gap-3" key={index1}>
+            {row.map((seat, index2) => (
+              <p
+                className={`px-1 py-1 border rounded-md text-center min-w-[40px] cursor-pointer ${
+                  selectedSeats.includes(seat)
+                    ? "bg-green-500 cursor-not-allowed"
+                    : "bg-white"
+                }`}
+                key={`${index1}-${index2}`}
+                onClick={() => {
+                  setSelectedSeats((prevSeats) => {
+                    if (prevSeats.length < 5) {
+                      return [...prevSeats, seat];
+                    } else {
+                      alert("Max limit reached");
+                      return prevSeats;
+                    }
+                  });
+                }}
+              >
+                {seat}
+              </p>
+            ))}
+          </div>
+        ))}
       </div>
-      <h4 style={{ color: "white", margin: "18px" }}>General Section - </h4>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {generalSeats.map((row, index1) => {
-          return (
-            <div style={{ display: "flex", gap: "10px" }} key={index1}>
-              {row.map((seat, index2) => {
-                return (
-                  <p
-                    style={{
-                      padding: "5px",
-                      border: "1px solid #ccc",
-                      borderRadius: "5px",
-                      textAlign: "center",
-                      minWidth: "40px",
-                      cursor: selectedSeats.includes(seat)
-                        ? "not-allowed"
-                        : "pointer",
-                      backgroundColor: selectedSeats.includes(seat)
-                        ? "darkseagreen"
-                        : "white",
-                    }}
-                    key={`${index1}-${index2}`}
-                    onClick={() => {
-                      setSelectedSeats((prevSeats) => {
-                        if (prevSeats.length < 5) {
-                          return [...prevSeats, seat];
-                        } else {
-                          alert("Max limit reached");
-                          return prevSeats;
-                        }
-                      });
-                    }}
-                  >
-                    {seat}
-                  </p>
-                );
-              })}
-            </div>
-          );
-        })}
+
+      <h4 className="text-white my-4 text-lg">General Section</h4>
+      <div className="flex flex-col gap-3 items-center">
+        {generalSeats.map((row, index1) => (
+          <div className="flex gap-3" key={index1}>
+            {row.map((seat, index2) => (
+              <p
+                className={`px-1 py-1 border rounded-md text-center min-w-[40px] cursor-pointer ${
+                  selectedSeats.includes(seat)
+                    ? "bg-green-500 cursor-not-allowed"
+                    : "bg-white"
+                }`}
+                key={`${index1}-${index2}`}
+                onClick={() => {
+                  setSelectedSeats((prevSeats) => {
+                    if (prevSeats.length < 5) {
+                      return [...prevSeats, seat];
+                    } else {
+                      alert("Max limit reached");
+                      return prevSeats;
+                    }
+                  });
+                }}
+              >
+                {seat}
+              </p>
+            ))}
+          </div>
+        ))}
       </div>
-      <h4 style={{ color: "white", margin: "18px" }}>Economy Section - </h4>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {economySeats.map((row, index1) => {
-          return (
-            <div style={{ display: "flex", gap: "10px" }} key={index1}>
-              {row.map((seat, index2) => {
-                return (
-                  <p
-                    style={{
-                      padding: "5px",
-                      border: "1px solid #ccc",
-                      borderRadius: "5px",
-                      textAlign: "center",
-                      minWidth: "40px",
-                      cursor: selectedSeats.includes(seat)
-                        ? "not-allowed"
-                        : "pointer",
-                      backgroundColor: selectedSeats.includes(seat)
-                        ? "darkseagreen"
-                        : "white",
-                    }}
-                    key={`${index1}-${index2}`}
-                    onClick={() => {
-                      setSelectedSeats((prevSeats) => {
-                        if (prevSeats.length < 5) {
-                          return [...prevSeats, seat];
-                        } else {
-                          alert("Max limit reached");
-                          return prevSeats;
-                        }
-                      });
-                    }}
-                  >
-                    {seat}
-                  </p>
-                );
-              })}
-            </div>
-          );
-        })}
+
+      <h4 className="text-white my-4 text-lg">Economy Section</h4>
+      <div className="flex flex-col gap-3 items-center">
+        {economySeats.map((row, index1) => (
+          <div className="flex gap-3" key={index1}>
+            {row.map((seat, index2) => (
+              <p
+                className={`px-1 py-1 border rounded-md text-center min-w-[40px] cursor-pointer ${
+                  selectedSeats.includes(seat)
+                    ? "bg-green-500 cursor-not-allowed"
+                    : "bg-white"
+                }`}
+                key={`${index1}-${index2}`}
+                onClick={() => {
+                  setSelectedSeats((prevSeats) => {
+                    if (prevSeats.length < 5) {
+                      return [...prevSeats, seat];
+                    } else {
+                      alert("Max limit reached");
+                      return prevSeats;
+                    }
+                  });
+                }}
+              >
+                {seat}
+              </p>
+            ))}
+          </div>
+        ))}
       </div>
+
       <button
-        style={{
-          padding: "10px",
-          backgroundColor: "#cc4141",
-          border: "none",
-          borderRadius: "10px",
-          margin: "20px",
-          color: "white",
-          fontSize: "18px",
-          cursor: "pointer",
-        }}
+        className="px-4 py-2 bg-customRed rounded-lg mx-5 my-10 text-white text-lg cursor-pointer"
         onClick={() => {
           alert(`Tickets Booked -\nSeat No.s - ${selectedSeats}`);
           setSelectedSeats([]);
@@ -210,19 +145,8 @@ const TicketBookingSystem = () => {
         Book Tickets
       </button>
       <button
-        style={{
-          padding: "10px",
-          backgroundColor: "#cc4141",
-          border: "none",
-          borderRadius: "10px",
-          margin: "20px",
-          color: "white",
-          fontSize: "18px",
-          cursor: "pointer",
-        }}
-        onClick={() => {
-          navigate("/");
-        }}
+        className="px-4 py-2 bg-customRed rounded-lg mx-5 my-10 text-white text-lg cursor-pointer"
+        onClick={() => navigate("/")}
       >
         Back
       </button>

@@ -1,21 +1,20 @@
 import { useNavigate } from "react-router-dom";
-import "./Dashboard.css";
 import { DataList } from "../../constants/DataList";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="main-container">
-        <div className="header">
-          <h1>React Practice Problems</h1>
+      <div className="text-center m-14">
+        <div className="m-14 text-white">
+          <h1 className="text-4xl">React Practice Problems</h1>
         </div>
-        <ul className="list">
+        <ul className="flex flex-wrap gap-10 justify-around items-center">
           {DataList.map((data, index) => {
             return (
               <li
                 key={index}
-                className="list-item"
+                className="list-none cursor-pointer text-white rounded-xl p-3 text-xl min-w-custom bg-customRed"
                 onClick={() => {
                   navigate(data.route);
                 }}

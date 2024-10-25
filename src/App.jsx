@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PhotoAlbum from "./components/PhotoAlbum/PhotoAlbum";
 import TicketBookingSystem from "./components/TicketBookingSystem/TicketBookingSystem";
 import Dashboard from "./components/Dashboard/Dashboard";
-import "./App.css";
 import TrafficLight from "./components/TrafficLight/TrafficLight";
 import Accordion from "./components/Accordion/Accordion";
 import RandomColorGenerator from "./components/RandomColorGenerator/RandomColorGenerator";

@@ -47,4 +47,8 @@ export const DataList = [
     name: "Theme",
     route: "/theme",
   },
+  {
+    name: "Scroll Indicator",
+    route: "/scroll-indicator",
+  },
 ];

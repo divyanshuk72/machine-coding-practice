@@ -43,4 +43,8 @@ export const DataList = [
     name: "QR Code",
     route: "/qr-code",
   },
+  {
+    name: "Theme",
+    route: "/theme",
+  },
 ];

@@ -13,6 +13,7 @@ import TreeView from "./components/TreeView/TreeView";
 import QRCodeGenerator from "./components/QRCodeGenerator/QRCodeGenerator";
 import Theme from "./components/Theme/Theme";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
+import Tabs from "./components/Tabs/Tabs";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
   {
     path: "/scroll-indicator",
     element: <ScrollIndicator />,
+  },
+  {
+    path: "/tabs",
+    element: <Tabs />,
   },
 ]);
 

@@ -59,4 +59,8 @@ export const DataList = [
     name: "Modal",
     route: "/modal",
   },
+  {
+    name: "GitHub Profile Finder",
+    route: "/github-profile-finder",
+  },
 ];

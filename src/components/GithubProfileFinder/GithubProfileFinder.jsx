@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import UserCard from "./UserCard";
 
 const GithubProfileFinder = () => {
   const API_URL = "https://api.github.com/users";
@@ -60,21 +61,7 @@ const GithubProfileFinder = () => {
           </button>
         </div>
         {!loading && "name" in userData ? (
-          <div className="h-[50vh] w-[50vh] border-none rounded-md bg-customRed flex flex-col justify-around items-center">
-            <div className="rounded-[50%]">
-              <img src={userData?.avatar_url} alt="" width={50} />
-            </div>
-            <h1 className="text-gray-400">@{userData?.login}</h1>
-            <h1>
-              <a href={userData?.html_url}>{userData?.name}</a>
-            </h1>
-            <h1>{userData?.bio}</h1>
-            <h1>{userData?.company}</h1>
-            <h1>Location - {userData?.location}</h1>
-            <h1>Followers - {userData?.followers}</h1>
-            <h1>Following - {userData?.following}</h1>
-            <h1>Public Repos - {userData?.public_repos}</h1>
-          </div>
+          <UserCard userData={userData} />
         ) : !loading && !("name" in userData) ? (
           <div className="text-center text-white m-[20px]">
             Enter username to search

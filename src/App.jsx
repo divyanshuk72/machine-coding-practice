@@ -14,6 +14,7 @@ import QRCodeGenerator from "./components/QRCodeGenerator/QRCodeGenerator";
 import Theme from "./components/Theme/Theme";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
 import Tabs from "./components/Tabs/Tabs";
+import Modal from "./components/Modal/Modal";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
   {
     path: "/tabs",
     element: <Tabs />,
+  },
+  {
+    path: "/modal",
+    element: <Modal />,
   },
 ]);
 

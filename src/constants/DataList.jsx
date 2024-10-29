@@ -55,4 +55,8 @@ export const DataList = [
     name: "Tabs",
     route: "/tabs",
   },
+  {
+    name: "Modal",
+    route: "/modal",
+  },
 ];

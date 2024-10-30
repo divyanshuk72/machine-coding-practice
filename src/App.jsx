@@ -16,6 +16,7 @@ import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
 import Tabs from "./components/Tabs/Tabs";
 import Modal from "./components/Modal/Modal";
 import GithubProfileFinder from "./components/GithubProfileFinder/GithubProfileFinder";
+import SearchSuggestions from "./components/SearchSuggestions/SearchSuggestions";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
   {
     path: "/github-profile-finder",
     element: <GithubProfileFinder />,
+  },
+  {
+    path: "/search-suggestions",
+    element: <SearchSuggestions />,
   },
 ]);
 

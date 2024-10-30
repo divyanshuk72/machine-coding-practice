@@ -63,4 +63,8 @@ export const DataList = [
     name: "GitHub Profile Finder",
     route: "/github-profile-finder",
   },
+  {
+    name: "Search Suggestions",
+    route: "/search-suggestions",
+  },
 ];

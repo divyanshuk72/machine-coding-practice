@@ -17,9 +17,11 @@ const UserCard = ({ userData }) => {
           <h1 className="text-black">@{userData?.login}</h1>
         </div>
         <h1>
-          <a href={userData?.html_url}>{userData?.name}</a>{" "}
+          <a className="text-3xl" href={userData?.html_url}>
+            {userData?.name}
+          </a>{" "}
         </h1>
-        <h1>{userData?.bio}</h1>
+        <h1 className="text-xl">{userData?.bio}</h1>
         <div className="flex justify-around items-center gap-2">
           <img src={Office} alt="office" />
           <h1>{userData?.company}</h1>

@@ -55,7 +55,7 @@ const GithubProfileFinder = () => {
           />
           <button
             onClick={handleSearch}
-            className="p-2 bg-red-500 border-none rounded-lg text-white text-lg cursor-pointer my-5 mx-5"
+            className="p-2 bg-customRed border-none rounded-lg text-white text-lg cursor-pointer my-5 mx-5"
           >
             Search
           </button>
@@ -75,7 +75,7 @@ const GithubProfileFinder = () => {
           onClick={() => {
             navigate("/");
           }}
-          className="p-2 bg-red-500 border-none rounded-lg text-white text-lg cursor-pointer my-5 mx-5"
+          className="p-2 bg-customRed border-none rounded-lg text-white text-lg cursor-pointer my-5 mx-5"
         >
           Back
         </button>

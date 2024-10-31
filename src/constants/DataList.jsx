@@ -67,4 +67,8 @@ export const DataList = [
     name: "Search Suggestions",
     route: "/search-suggestions",
   },
+  {
+    name: "Tic Tac Toe",
+    route: "/tic-tac-toe",
+  },
 ];

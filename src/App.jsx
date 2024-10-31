@@ -17,6 +17,7 @@ import Tabs from "./components/Tabs/Tabs";
 import Modal from "./components/Modal/Modal";
 import GithubProfileFinder from "./components/GithubProfileFinder/GithubProfileFinder";
 import SearchSuggestions from "./components/SearchSuggestions/SearchSuggestions";
+import TicTacToe from "./components/TicTacToe/TicTacToe";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
   {
     path: "/search-suggestions",
     element: <SearchSuggestions />,
+  },
+  {
+    path: "/tic-tac-toe",
+    element: <TicTacToe />,
   },
 ]);
 

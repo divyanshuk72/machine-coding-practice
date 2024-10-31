@@ -74,7 +74,7 @@ const SearchSuggestions = () => {
         </div>
 
         {showDropdown && (
-          <ul className="bg-gray-800 w-[300px] mt-2 rounded-md shadow-lg max-h-48 overflow-y-auto">
+          <ul className="bg-gray-800 w-[300px] mt-2 rounded-md shadow-lg max-h-48 overflow-y-auto divide-y">
             {filteredUsers.length > 0 ? (
               filteredUsers.map((user, index) => (
                 <li

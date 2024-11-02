@@ -37,13 +37,47 @@ const ListTransfer = () => {
   const [firstList, setFirstList] = useState(data);
   const [secondList, setSecondList] = useState([]);
 
-  const handleFirstListChange = () => {};
+  const handleFirstListChange = (id) => {
+    setFirstList((prevList) =>
+      prevList.map((item) =>
+        item.id === id ? { ...item, checked: !item.checked } : item
+      )
+    );
+  };
 
-  const handleSecondListChange = () => {};
+  const handleSecondListChange = (id) => {
+    setSecondList((prevList) =>
+      prevList.map((item) =>
+        item.id === id ? { ...item, checked: !item.checked } : item
+      )
+    );
+  };
 
-  const handleMoveRight = () => {};
+  const handleMoveRight = () => {
+    const selectedItems = firstList.filter((item) => item.checked);
+    const remainingItems = firstList.filter((item) => !item.checked);
 
-  const handleMoveLeft = () => {};
+    setFirstList(remainingItems);
+    setSecondList((prevList) =>
+      [...prevList, ...selectedItems].map((item) => ({
+        ...item,
+        checked: false,
+      }))
+    );
+  };
+
+  const handleMoveLeft = () => {
+    const selectedItems = secondList.filter((item) => item.checked);
+    const remainingItems = secondList.filter((item) => !item.checked);
+
+    setSecondList(remainingItems);
+    setFirstList((prevList) =>
+      [...prevList, ...selectedItems].map((item) => ({
+        ...item,
+        checked: false,
+      }))
+    );
+  };
 
   return (
     <>
@@ -57,7 +91,9 @@ const ListTransfer = () => {
                   <input
                     type="checkbox"
                     checked={item.checked}
-                    onChange={handleFirstListChange}
+                    onChange={() => {
+                      handleFirstListChange(item.id);
+                    }}
                   />
                   <label className="text-xl">{item.name}</label>
                 </div>
@@ -85,7 +121,9 @@ const ListTransfer = () => {
                   <input
                     type="checkbox"
                     checked={item.checked}
-                    onChange={handleSecondListChange}
+                    onChange={() => {
+                      handleSecondListChange(item.id);
+                    }}
                   />
                   <label className="text-xl">{item.name}</label>
                 </div>

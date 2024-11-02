@@ -1,5 +1,33 @@
 import { useNavigate } from "react-router-dom";
 
+const data = [
+  {
+    name: "One",
+    id: 1,
+    checked: false,
+  },
+  {
+    name: "Two",
+    id: 2,
+    checked: false,
+  },
+  {
+    name: "Three",
+    id: 3,
+    checked: false,
+  },
+  {
+    name: "Four",
+    id: 4,
+    checked: false,
+  },
+  {
+    name: "Five",
+    id: 5,
+    checked: false,
+  },
+];
+
 const ListTransfer = () => {
   const navigate = useNavigate();
   return (

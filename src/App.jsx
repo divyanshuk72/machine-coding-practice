@@ -18,6 +18,7 @@ import Modal from "./components/Modal/Modal";
 import GithubProfileFinder from "./components/GithubProfileFinder/GithubProfileFinder";
 import SearchSuggestions from "./components/SearchSuggestions/SearchSuggestions";
 import TicTacToe from "./components/TicTacToe/TicTacToe";
+import ListTransfer from "./components/ListTransfer/ListTransfer";
 
 const router = createBrowserRouter([
   {
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
   {
     path: "/tic-tac-toe",
     element: <TicTacToe />,
+  },
+  {
+    path: "/list-transfer",
+    element: <ListTransfer />,
   },
 ]);
 

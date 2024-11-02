@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import Right from "../../assets/RightArrow.svg";
+import Left from "../../assets/LeftArrow.svg";
 
 const data = [
   {
@@ -40,10 +42,10 @@ const ListTransfer = () => {
           </div>
           <div className="flex flex-col justify-center items-center gap-3">
             <button className="rounded-[50%] bg-customRed p-2 w-10 hover:bg-red-400">
-              {">"}
+              <img src={Right} alt="right" />
             </button>
             <button className="rounded-[50%] bg-customRed p-2 w-10 hover:bg-red-400">
-              {"<"}
+              <img src={Left} alt="left" />
             </button>
           </div>
           <div className="bg-customRed w-[200px] h-[400px] rounded-md p-4">

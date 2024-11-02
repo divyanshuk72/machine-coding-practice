@@ -4,36 +4,15 @@ import Left from "../../assets/LeftArrow.svg";
 import { useState } from "react";
 
 const data = [
-  {
-    name: "1",
-    id: 1,
-    checked: false,
-  },
-  {
-    name: "2",
-    id: 2,
-    checked: false,
-  },
-  {
-    name: "3",
-    id: 3,
-    checked: false,
-  },
-  {
-    name: "4",
-    id: 4,
-    checked: false,
-  },
-  {
-    name: "5",
-    id: 5,
-    checked: false,
-  },
+  { name: "First", id: 1, checked: false },
+  { name: "Second", id: 2, checked: false },
+  { name: "Third", id: 3, checked: false },
+  { name: "Fourth", id: 4, checked: false },
+  { name: "Fifth", id: 5, checked: false },
 ];
 
 const ListTransfer = () => {
   const navigate = useNavigate();
-
   const [firstList, setFirstList] = useState(data);
   const [secondList, setSecondList] = useState([]);
 
@@ -80,67 +59,70 @@ const ListTransfer = () => {
   };
 
   return (
-    <>
-      <div className="flex flex-col justify-center items-center gap-12 text-white mt-[50px]">
-        <h1 className="text-4xl">List Transfer</h1>
-        <div className="flex justify-center items-center gap-8">
-          <div className="bg-customRed w-[200px] h-[400px] rounded-md p-4 flex flex-col justify-evenly items-center gap-1">
-            {firstList.map((item) => {
-              return (
-                <div key={item.id} className="flex gap-6">
-                  <input
-                    type="checkbox"
-                    checked={item.checked}
-                    onChange={() => {
-                      handleFirstListChange(item.id);
-                    }}
-                  />
-                  <label className="text-xl">{item.name}</label>
-                </div>
-              );
-            })}
-          </div>
-          <div className="flex flex-col justify-center items-center gap-3">
-            <button
-              onClick={handleMoveRight}
-              className="rounded-[50%] bg-customRed p-2 w-10 hover:bg-red-400"
+    <div className="flex flex-col justify-center items-center gap-12 text-white mt-[50px]">
+      <h1 className="text-4xl mb-5">List Transfer</h1>
+      <div className="flex justify-center items-center gap-10">
+        {/* First List */}
+        <div className="bg-customRed w-[220px] h-[420px] rounded-lg shadow-lg p-5 flex flex-col justify-evenly items-center gap-3">
+          {firstList.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center gap-4 p-2 w-full rounded-md hover:bg-red-400 transition-colors"
             >
-              <img src={Right} alt="right" />
-            </button>
-            <button
-              onClick={handleMoveLeft}
-              className="rounded-[50%] bg-customRed p-2 w-10 hover:bg-red-400"
-            >
-              <img src={Left} alt="left" />
-            </button>
-          </div>
-          <div className="bg-customRed w-[200px] h-[400px] rounded-md p-4 flex flex-col justify-evenly items-center gap-1">
-            {secondList.map((item) => {
-              return (
-                <div key={item.id} className="flex gap-6">
-                  <input
-                    type="checkbox"
-                    checked={item.checked}
-                    onChange={() => {
-                      handleSecondListChange(item.id);
-                    }}
-                  />
-                  <label className="text-xl">{item.name}</label>
-                </div>
-              );
-            })}
-          </div>
+              <input
+                type="checkbox"
+                checked={item.checked}
+                onChange={() => handleFirstListChange(item.id)}
+                className="h-5 w-5 cursor-pointer accent-red-100"
+              />
+              <label className="text-lg font-medium">{item.name}</label>
+            </div>
+          ))}
         </div>
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-          className="p-2 bg-customRed border-none rounded-lg text-white text-lg cursor-pointer my-5 mx-5"
-        >
-          Back
-        </button>
+
+        {/* Control Buttons */}
+        <div className="flex flex-col justify-center items-center gap-3">
+          <button
+            onClick={handleMoveRight}
+            className="rounded-full bg-customRed p-3 w-12 h-12 flex items-center justify-center shadow-lg transition-transform hover:bg-red-400 active:scale-90"
+          >
+            <img src={Right} alt="Move right" />
+          </button>
+          <button
+            onClick={handleMoveLeft}
+            className="rounded-full bg-customRed p-3 w-12 h-12 flex items-center justify-center shadow-lg transition-transform hover:bg-red-400 active:scale-90"
+          >
+            <img src={Left} alt="Move left" />
+          </button>
+        </div>
+
+        {/* Second List */}
+        <div className="bg-customRed w-[220px] h-[420px] rounded-lg shadow-lg p-5 flex flex-col justify-evenly items-center gap-3">
+          {secondList.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center gap-4 p-2 w-full rounded-md hover:bg-red-400 transition-colors"
+            >
+              <input
+                type="checkbox"
+                checked={item.checked}
+                onChange={() => handleSecondListChange(item.id)}
+                className="h-5 w-5 cursor-pointer accent-red-100"
+              />
+              <label className="text-lg font-medium">{item.name}</label>
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+
+      {/* Back Button */}
+      <button
+        onClick={() => navigate("/")}
+        className="p-2 bg-customRed hover:bg-red-400 border-none rounded-lg text-white text-lg cursor-pointer my-5 mx-5"
+      >
+        Back
+      </button>
+    </div>
   );
 };
 

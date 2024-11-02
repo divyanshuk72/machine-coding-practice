@@ -71,4 +71,8 @@ export const DataList = [
     name: "Tic Tac Toe",
     route: "/tic-tac-toe",
   },
+  {
+    name: "List Transfer",
+    route: "/list-transfer",
+  },
 ];
